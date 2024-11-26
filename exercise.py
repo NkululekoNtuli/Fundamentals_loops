@@ -2,31 +2,68 @@ def sum_with_while(start, end):
     """
     Calculate the sum of all numbers between start and end (inclusive) using a while loop.
     """
-    pass
+    count = start + 1
+    sum = start + end
+    while count > start and count < end:
+        sum += count
+        count += 1
+    return sum
 
 def count_vowels_in_string(input_string):
     """
     Count the number of vowels in a given string using a for loop.
     """
-    pass
+    vowels = ["A", "E", "I", "O", "U"]
+    count = 0
+    for l in range(len(input_string)):
+        if input_string[l].upper() in vowels:
+            count += 1
+    return count
+
 
 def filter_numbers(numbers):
     """
     Filter a list of numbers based on specific conditions using a for loop and conditionals.
     """
-    pass
+    new_list = {"positive": [],
+                "negative": [],
+                "even": [],
+                "odd": []}
+    for n in numbers:
+        if n > 0:
+            new_list["positive"].append(n)
+            if n % 2 == 0:
+                new_list["even"].append(n)
+            elif n % 2 != 0:
+                new_list["odd"].append(n)
+
+        elif n < 0:
+            new_list["negative"].append(n)
+            if n % 2 == 0:
+                new_list["even"].append(n)
+            elif n % 2 != 0:
+                new_list["odd"].append(n)
+        else:
+            new_list["even"].append(n)
+    return new_list
+    
 
 def fibonacci_sequence(n):
     """
     Generate Fibonacci sequence up to n terms using a while loop.
     """
-    pass
+    fibo = [0, 1]
+    count = 1
+    while count < n:
+        fibo.append(fibo[count - 1] + fibo[count])
+        count += 1
+    return fibo
 
 def pascals_triangle(rows):
     """
     Generate Pascal's Triangle up to a given number of rows.
     """
-    pass
+    
 
 def tower_of_hanoi(n, source, target, auxiliary):
     """
