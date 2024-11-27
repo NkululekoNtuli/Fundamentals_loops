@@ -1,3 +1,5 @@
+import string
+
 def sum_with_while(start, end):
     """
     Calculate the sum of all numbers between start and end (inclusive) using a while loop.
@@ -8,6 +10,7 @@ def sum_with_while(start, end):
         sum += count
         count += 1
     return sum
+
 
 def count_vowels_in_string(input_string):
     """
@@ -54,16 +57,49 @@ def fibonacci_sequence(n):
     """
     fibo = [0, 1]
     count = 1
+    if n == 0:
+        return []
+    
     while count < n:
         fibo.append(fibo[count - 1] + fibo[count])
         count += 1
+    fibo.remove(n)
     return fibo
+
 
 def pascals_triangle(rows):
     """
     Generate Pascal's Triangle up to a given number of rows.
     """
+    # Zero row n = 0, (x + y)0
+
+    # First row n = 1 , (x + y)1 
+
+    # Second row n = 2, (x + y)2 
+
+    # Third row n = 3, (x + y)3
+
+    # Fourth row n = 4, (x + y)4 
     
+    tri_list = []
+    for r in rows:
+        temp_list = []
+        if rows == 1:
+            tri_list.append([1])
+            return tri_list
+        elif rows == 2:
+            tri_list.append([1], [1, 1])
+            return tri_list
+        else:
+            n = 0
+            for elem in r:
+                temp_list.append(r[elem] + r[elem + 1])
+        tri_list.append(temp_list)
+    return tri_list
+
+# print(pascals_triangle(4))
+
+
 
 def tower_of_hanoi(n, source, target, auxiliary):
     """
@@ -81,7 +117,15 @@ def is_palindrome(input_string):
     """
     Check if a given string is a palindrome (ignoring spaces, capitalization, and punctuation).
     """
-    pass
+    input_string = sorted(input_string.upper())
+
+    for i in input_string:
+        if i in string.punctuation:
+            input_string.replace(i)
+    print(input_string)
+is_palindrome
+
+print(is_palindrome("A man, a plan, a canal, Panama"))
 
 def generate_permutations(input_string):
     """
