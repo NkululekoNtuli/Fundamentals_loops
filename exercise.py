@@ -80,24 +80,11 @@ def pascals_triangle(rows):
     # Third row n = 3, (x + y)3
 
     # Fourth row n = 4, (x + y)4 
-    
-    tri_list = []
-    for r in rows:
-        temp_list = []
-        if rows == 1:
-            tri_list.append([1])
-            return tri_list
-        elif rows == 2:
-            tri_list.append([1], [1, 1])
-            return tri_list
-        else:
-            n = 0
-            for elem in r:
-                temp_list.append(r[elem] + r[elem + 1])
-        tri_list.append(temp_list)
-    return tri_list
 
-# print(pascals_triangle(4))
+    tri_list = []
+    for 
+
+print(pascals_triangle(4))
 
 
 
@@ -111,27 +98,29 @@ def find_dna_sequence(dna, sequence):
     """
     Find the first occurrence of a DNA subsequence within a larger DNA string.
     """
-    pass
+    
+
 
 def is_palindrome(input_string):
     """
     Check if a given string is a palindrome (ignoring spaces, capitalization, and punctuation).
     """
-    input_string = sorted(input_string.upper())
+    if " " in input_string:
+        input_string = input_string.replace(" ", "")
+    if "," in input_string:
+        input_string = input_string.replace(",", "")
 
-    for i in input_string:
-        if i in string.punctuation:
-            input_string.replace(i)
-    print(input_string)
-is_palindrome
+    input_string = input_string.upper()
+    return input_string == input_string[::-1]
 
-print(is_palindrome("A man, a plan, a canal, Panama"))
 
 def generate_permutations(input_string):
     """
     Return all possible permutations of a given string.
     """
     pass
+    
+# print(generate_permutations("abc"))
 
 def is_valid_sudoku(board):
     """
@@ -151,5 +140,6 @@ def longest_common_subsequence(str1, str2):
     """
     pass
 
-if __name__ == "__main__":
-    pass
+
+
+# if __name__ == "__main__":
